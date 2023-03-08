@@ -39,7 +39,6 @@ function gestionArguments(args){
     return true;
 }
 
-
 //resolution 
 if(gestionArguments(args)){
     var NemeElement = suiteFibonacci(NemeElement);
