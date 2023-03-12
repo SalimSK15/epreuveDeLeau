@@ -3,12 +3,26 @@ const args = process.argv;
 var tabDifferenceValeursMin = [];
 
 //fonctions 
+function siNumerique(argument){
+    return /^-?\d+$/.test(argument)
+}
 function minValeur(val1, val2){
     if(val1 < val2)
         return val1;
     return val2;
 }
 
+
+function verificationValeurSaisi(args){
+    for(let i = 2; i < args.length; i++){
+        if(!siNumerique(args[i])){
+            console.log("Erreur veuillez saisir une liste de nombre !");
+            return false;
+        }
+    }
+    return true;
+}
+// on recupere un tableau avec l'ensemble des valeur absolu
 function calculeDifferenceValeurMin(args){
    let differenceMin = [];
 
@@ -25,6 +39,7 @@ function calculeDifferenceValeurMin(args){
     }
 }
 
+// on cherche le le minimum dans le tableau des valeur absolu
 function returnDiffendMin(tabValeurMin){
     let valmin = tabValeurMin[0];
 
@@ -46,8 +61,10 @@ function gestionErreur(args){
 
 //resolution
 if(gestionErreur(args)){
-    calculeDifferenceValeurMin(args);
-    console.log(returnDiffendMin(tabDifferenceValeursMin));
-
+    if(verificationValeurSaisi(args)){
+        calculeDifferenceValeurMin(args);        
+        console.log(returnDiffendMin(tabDifferenceValeursMin));
+    }
+        
 }
     
