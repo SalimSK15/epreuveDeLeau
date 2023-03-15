@@ -7,6 +7,7 @@ var reslulat = "";
 function siNumerique(argument){
     return /^-?\d+$/.test(argument)
 }
+
 function nombrePremier(val){
     var premier = true;
     if(val == 0 || val == 1)
