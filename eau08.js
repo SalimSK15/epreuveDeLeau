@@ -3,8 +3,8 @@ const args = process.argv;
 var valeurEntree = args[2];
 
 //fonctions
-function siLettreAlphabetique(lettre){
-    return /[A-Za-z]/.test(lettre);
+function siNumerique(lettre){
+    return /^-?\d+$/.test(lettre);
 }
 function mettreEnMajuscule(lettre){
 
@@ -12,9 +12,9 @@ function mettreEnMajuscule(lettre){
 }
 
 //gestion d'erreurs
-function gestionErreur(args){
+function gestionErreurOk(args){
     if(args.length == 3){
-        if(siLettreAlphabetique(valeurEntree)){
+        if(!siNumerique(valeurEntree)){
             console.log("Veuillez saisir une chaine de nombre ! ex : \"444523\" ");
             return false;
         }
@@ -33,5 +33,5 @@ function gestionErreur(args){
 }
 
 //affichage
-if(gestionErreur(args))
+if(gestionErreurOk(args))
     console.log(valeurEntree);
