@@ -23,6 +23,7 @@ function valeursMinMax(valeurEntree01,valeurEntree02){
     let minVal = minValeurs(valeurEntree01,valeurEntree02)[0];
     let maxVal = minValeurs(valeurEntree01,valeurEntree02)[1];
     var listeNombreMinMax = "";
+    
     for(let i = minVal; i < maxVal; i++){
         listeNombreMinMax += i+" ";
     }
