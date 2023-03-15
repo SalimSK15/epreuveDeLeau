@@ -11,8 +11,6 @@ function minValeur(val1, val2){
         return val1;
     return val2;
 }
-
-
 function verificationValeurSaisi(args){
     for(let i = 2; i < args.length; i++){
         if(!siNumerique(args[i])){
