@@ -6,7 +6,7 @@ var valeurEntree02 = args[3];
 // fonctions
 function chercheIndex(pos,lettre,chaine){
     let i = pos;
-    while (lettre != chaine[i]) {
+    while (lettre != chaine[i] && i < chaine.length) {
         i++;
     }
     return i;
